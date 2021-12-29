@@ -27,9 +27,14 @@ export default async function subscribe(ctx: Context) {
   }
 
   return ctx.editMessageText(
-    ctx.i18n.t(hasSubscribed ? 'subscribed' : 'unsubscribed', {
-      product: product.name,
-    }),
+    ctx.i18n.t(
+      hasSubscribed
+        ? 'subscribedToReceiveNotificationForTheProduct'
+        : 'unsubscribedFromNotificationForTheProduct',
+      {
+        product: product.name,
+      }
+    ),
     {
       parse_mode: 'HTML',
     }

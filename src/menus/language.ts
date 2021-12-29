@@ -6,7 +6,7 @@ import { resolve } from 'path'
 import Context from '@/models/Context'
 
 interface YamlWithName {
-  name: string
+  languageName: string
 }
 
 const localeFilePaths = readdirSync(resolve(cwd(), 'locales'))
@@ -21,17 +21,17 @@ const setLanguage = (languageCode: string) => async (ctx: Context) => {
   ctx.dbuser.language = languageCode
   await ctx.dbuser.save()
   ctx.i18n.locale(languageCode)
-  return ctx.editMessageText(ctx.i18n.t('language_selected'), {
+  return ctx.editMessageText(ctx.i18n.t('languageWasSelected'), {
     parse_mode: 'HTML',
     reply_markup: undefined,
   })
 }
 
-const languageMenu = new Menu<Context>('language')
+const languageMenu = new Menu<Context>('languageSelector')
 
 localeFilePaths.forEach((localeFilePath, index) => {
   const localeCode = localeFilePath.split('.')[0]
-  const localeName = localeFile(localeFilePath).name
+  const localeName = localeFile(localeFilePath).languageName
   languageMenu.text(localeName, setLanguage(localeCode))
   if (index % 2 != 0) {
     languageMenu.row()

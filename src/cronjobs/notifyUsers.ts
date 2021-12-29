@@ -32,7 +32,7 @@ async function run() {
     // eslint-disable-next-line @typescript-eslint/no-unsafe-argument
     const allSubscribedUsers = await findUserBySubscribedProduct(product.id)
     for (const user of allSubscribedUsers) {
-      await notify(user, apiProductAvailabilities)
+      await notify(user, apiProductAvailabilities, product)
     }
   }
 }

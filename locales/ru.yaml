@@ -1,5 +1,10 @@
-name: Русский
-help: |
-  <b>Бот</b> является примером бота на Telegram.
-language: Пожалуйста, выберите язык.
-language_selected: <b>Бот</b> теперь говорит по-русски.
+languageName: Русский
+help: Помощь
+showProducts: Показать продукты
+languageSelector: Выберите язык
+languageWasSelected: Язык был выбран
+availableProducts: Доступные продукты
+youAreSubscribed: Вы подписаны
+subscribedToReceiveNotificationForTheProduct: Вы подписаны на уведомления для продукта ${product}
+unsubscribedFromNotificationForTheProduct: Вы отписаны от уведомлений для продукта ${product}
+firstAvailableDateForProduct: Доступная дата для продукта ${product} ${date}

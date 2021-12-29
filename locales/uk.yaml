@@ -1,0 +1,15 @@
+languageName: Українська
+help: |
+  Привіт друже! Цей бот допомагає отримувати повідомлення про наявні місця у ${business}
+showProducts: Показати продукти.
+languageSelector: Будь ласка, оберіть мову
+languageWasSelected: Тепер бот буде відправляти вам повідомлення українською мовою
+availableProducts: |
+  Можна підписатися на повідомлення про такі продукти:
+youAreSubscribed: ви підписані
+subscribedToReceiveNotificationForTheProduct: |
+  Ви підписані отримувати повідомлення про ${product}
+unsubscribedFromNotificationForTheProduct: |
+  Ви відписалися від повідомлень про ${product}
+firstAvailableDateForProduct: |
+  Перша дата доступна для ${product}: ${date}

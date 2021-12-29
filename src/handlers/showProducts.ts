@@ -24,7 +24,7 @@ export default async function showProducts(ctx: Context) {
       ])
     }
   }
-  return ctx.reply(ctx.i18n.t('products'), {
+  return ctx.reply(ctx.i18n.t('availableProducts'), {
     parse_mode: 'HTML',
     reply_markup: {
       inline_keyboard: inlineKeyboard,

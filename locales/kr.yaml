@@ -1,0 +1,10 @@
+languageName: 한국어
+help: 안녕 친구! 이 봇은 ${business}의 새로운 약속에 대해 알립니다.
+showProducts: 상품 보기
+languageSelector: 언어 선택
+languageWasSelected: 언어가 선택되었습니다.
+availableProducts: 사용 가능한 상품
+youAreSubscribed: 구독 중입니다.
+subscribedToReceiveNotificationForTheProduct: ${product} 제품에 대한 알림을 수신하도록 구독했습니다.
+unsubscribedFromNotificationForTheProduct: ${product} 제품에 대한 알림을 수신하지 않으도록 구독을 취소했습니다.
+firstAvailableDateForProduct: ${product} 제품의 첫 사용 가능 날짜는 ${date}입니다.

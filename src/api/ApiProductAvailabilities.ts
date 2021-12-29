@@ -1,10 +1,10 @@
 export class Timeslot {
-  public time: string
+  public dateTime: Date
   public availability: number
   public capacity: number
   public availableForCheckin: boolean
-  constructor(time: string, timeslotData: any) {
-    this.time = time
+  constructor(dateTime: string, timeslotData: any) {
+    this.dateTime = new Date(dateTime)
     this.availability = timeslotData.availability
     this.capacity = timeslotData.capacity
     this.availableForCheckin = timeslotData.available_for_checkin
@@ -12,13 +12,13 @@ export class Timeslot {
 }
 
 export class Availability {
-  public date: string
+  public date: Date
   public availability: number
   public capacity: number
   public availableForCheckin: boolean
   public timeslots: Timeslot[]
   constructor(date: string, availabilityData: any) {
-    this.date = date
+    this.date = new Date(date)
     this.availability = availabilityData.availability
     this.capacity = availabilityData.capacity
     this.availableForCheckin = availabilityData.available_for_checkin
@@ -27,7 +27,7 @@ export class Availability {
     // eslint-disable-next-line @typescript-eslint/no-unsafe-argument
     for (const timeslot of Object.entries(availabilityData.timeslots)) {
       const [time, timeslotData] = timeslot
-      timeslots.push(new Timeslot(time, timeslotData))
+      timeslots.push(new Timeslot(date + ' ' + time, timeslotData))
     }
 
     this.timeslots = timeslots
@@ -35,12 +35,12 @@ export class Availability {
 }
 
 export class ApiProductAvailabilities {
-  public firstAvailable: string
+  public firstAvailableDate: Date
   public availabilities: Availability[]
 
   constructor(jsonData: any) {
     const data = jsonData.data || {}
-    this.firstAvailable = data.first_available
+    this.firstAvailableDate = new Date(data.first_available)
 
     const availabilities: Availability[] = []
     // eslint-disable-next-line @typescript-eslint/no-unsafe-argument
