@@ -34,6 +34,7 @@ async function runApp() {
   bot.command('language', handleLanguage)
   bot.command('showProducts', showProducts)
   bot.callbackQuery('buttonShowProducts', showProducts)
+  bot.callbackQuery('buttonSetLanguage', handleLanguage)
   bot.callbackQuery(/^subscribe:/, subscribe)
   // Errors
   bot.catch(console.error)

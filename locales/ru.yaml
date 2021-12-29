@@ -1,10 +1,15 @@
 languageName: Русский
-help: Помощь
+help: Привет! Этот бот поможет получить сообщения о наличии мест в ${business}
 showProducts: Показать продукты
-languageSelector: Выберите язык
+languageSelector: Выберите язык (change language)
 languageWasSelected: Язык был выбран
 availableProducts: Доступные продукты
 youAreSubscribed: Вы подписаны
 subscribedToReceiveNotificationForTheProduct: Вы подписаны на уведомления для продукта ${product}
 unsubscribedFromNotificationForTheProduct: Вы отписаны от уведомлений для продукта ${product}
 firstAvailableDateForProduct: Доступная дата для продукта ${product} ${date}
+availableTimeslotsWithinNextTwoWeeks: Доступные слоты в течение следующих двух недель для продукта ${product}
+availableTimeAndAvailabilityLeft: |
+  ${time} ⏰ осталось мест ${availability}
+noAvailableTimeslotsWithinNextTwoWeeks: Нет доступных слотов в течение следующих двух недель для продукта ${product}
+goToBookingPage: Перейти к странице бронирования

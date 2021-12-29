@@ -27,7 +27,7 @@ async function run() {
       new Date(),
       14,
       // mock data
-      true
+      false
     )
     // eslint-disable-next-line @typescript-eslint/no-unsafe-argument
     const allSubscribedUsers = await findUserBySubscribedProduct(product.id)

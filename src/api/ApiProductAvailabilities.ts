@@ -46,7 +46,6 @@ export class ApiProductAvailabilities {
     // eslint-disable-next-line @typescript-eslint/no-unsafe-argument
     for (const dates of Object.entries(data.dates)) {
       const [date, availabilityData] = dates
-      console.log(date, availabilityData)
 
       availabilities.push(new Availability(date, availabilityData))
     }

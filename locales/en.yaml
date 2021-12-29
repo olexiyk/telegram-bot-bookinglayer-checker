@@ -2,7 +2,7 @@ languageName: English
 help: |
   Hello, friend! This bot will notify about new available appointments for ${business}
 showProducts: View available products
-languageSelector: Please, select the language.
+languageSelector: Change language settings
 languageWasSelected: <b>This bot</b> now speaks English.
 availableProducts: |
   It is possible to subscribe to the updates for following products:
@@ -13,7 +13,10 @@ unsubscribedFromNotificationForTheProduct: |
   You unsubscribed from recieving notifications about the following product: ${product}
 firstAvailableDateForProduct: |
   The first available appointment for ${product} is on ${date}
-availableTimeslots: |
-  The following timeslots are available:
-availableTimeslot: |
-  ${time} ⏰ ${availability} left
+availableTimeslotsWithinNextTwoWeeks: |
+  The following timeslots are available for ${product} within next two weeks:
+availableTimeAndAvailabilityLeft: |
+  ${time} ⏰ ${availability} slots left
+noAvailableTimeslotsWithinNextTwoWeeks: |
+  There are no available timeslots for ${product} within next two weeks.
+goToBookingPage: Go to booking page

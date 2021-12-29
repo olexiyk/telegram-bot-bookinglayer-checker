@@ -11,6 +11,10 @@ export default function handleHelp(ctx: Context) {
             text: ctx.i18n.t('showProducts'),
             callback_data: 'buttonShowProducts',
           },
+          {
+            text: ctx.i18n.t('languageSelector'),
+            callback_data: 'buttonSetLanguage',
+          },
         ],
       ],
     },
