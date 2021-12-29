@@ -1,22 +1,24 @@
 {
-  "name": "telegram-bot-starter",
+  "name": "telegram-bot-bookinglayer-checker",
   "version": "1.0.0",
-  "description": "Telegram bot starter based on grammY",
+  "description": "Telegram bot that helps to check availability in bookinglayer API",
   "main": "dist/app.js",
   "repository": "https://github.com/Borodutch/telegram-bot-template",
-  "author": "backmeupplz <backmeupplz@gmail.com>",
+  "author": "Olexiy Kyrychenko <olexiy.kyrychenko@gmail.com>",
   "license": "MIT",
   "scripts": {
     "distribute": "yarn build-ts && node dist/app.js",
-    "develop": "tsc-watch --skipLibCheck --onSuccess 'node dist/app.js'",
+    "develop": "tsc-watch --skipLibCheck --onSuccess \"/Users/okyryche/.nvm/versions/node/v16.13.0/bin/node dist/app.js\"",
     "build-ts": "tsc --skipLibCheck",
     "pretty": "prettier --check src",
+    "notifyUsers": "tsc-watch --skipLibCheck --onSuccess \"/Users/okyryche/.nvm/versions/node/v16.13.0/bin/node dist/cronjobs/notifyUsers.js\"",
     "lint": "yarn pretty && eslint --max-warnings 0 --ext ts,tsx,json src"
   },
   "dependencies": {
     "@grammyjs/i18n": "^0.5.0",
     "@grammyjs/menu": "^1.0.4",
     "@grammyjs/runner": "^1.0.3",
+    "date-fns": "^2.28.0",
     "dotenv": "^10.0.0",
     "envalid": "^7.2.2",
     "grammy": "^1.5.0",

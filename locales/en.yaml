@@ -1,5 +1,13 @@
 name: English
 help: |
-  <b>This bot</b> allows you to see how Telegram bots can be built.
+  Hello, friend! This bot will notify about new available appointments for ${business}
+showProducts: View available products
 language: Please, select the language.
 language_selected: <b>This bot</b> now speaks English.
+products: |
+  It is possible to subscribe to the updates for following products:
+youAreSubscribed: you are subscribed
+subscribed: |
+  You subscribed to receive notifications about the following product: ${product}
+unsubscribed: |
+  You subscribed to receive notifications about the following product: ${product}

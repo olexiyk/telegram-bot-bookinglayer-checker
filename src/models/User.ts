@@ -1,11 +1,19 @@
-import { getModelForClass, modelOptions, prop } from '@typegoose/typegoose'
+import {
+  getModelForClass,
+  modelOptions,
+  prop,
+  queryMethod,
+} from '@typegoose/typegoose'
 
+@queryMethod(findUserBySubscribedProduct)
 @modelOptions({ schemaOptions: { timestamps: true } })
 export class User {
   @prop({ required: true, index: true, unique: true })
   id!: number
   @prop({ required: true, default: 'en' })
   language!: string
+  @prop({ required: true, default: [], index: true })
+  subscribedProducts!: string[]
 }
 
 const UserModel = getModelForClass(User)
@@ -19,4 +27,8 @@ export function findOrCreateUser(id: number) {
       new: true,
     }
   )
+}
+
+export function findUserBySubscribedProduct(productId: string) {
+  return UserModel.find({ subscribedProducts: productId })
 }

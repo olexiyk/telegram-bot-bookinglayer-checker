@@ -497,6 +497,13 @@ __metadata:
   languageName: node
   linkType: hard
 
+"date-fns@npm:^2.28.0":
+  version: 2.28.0
+  resolution: "date-fns@npm:2.28.0"
+  checksum: a0516b2e4f99b8bffc6cc5193349f185f195398385bdcaf07f17c2c4a24473c99d933eb0018be4142a86a6d46cb0b06be6440ad874f15e795acbedd6fd727a1f
+  languageName: node
+  linkType: hard
+
 "debug@npm:4.x, debug@npm:^4.0.1, debug@npm:^4.1.1, debug@npm:^4.3.2, debug@npm:^4.3.3":
   version: 4.3.3
   resolution: "debug@npm:4.3.3"
@@ -2127,9 +2134,9 @@ __metadata:
   languageName: node
   linkType: hard
 
-"telegram-bot-starter@workspace:.":
+"telegram-bot-bookinglayer-checker@workspace:.":
   version: 0.0.0-use.local
-  resolution: "telegram-bot-starter@workspace:."
+  resolution: "telegram-bot-bookinglayer-checker@workspace:."
   dependencies:
     "@grammyjs/i18n": ^0.5.0
     "@grammyjs/menu": ^1.0.4
@@ -2139,6 +2146,7 @@ __metadata:
     "@types/node": ^16.11.12
     "@typescript-eslint/eslint-plugin": ^5.6.0
     "@typescript-eslint/parser": ^5.6.0
+    date-fns: ^2.28.0
     dotenv: ^10.0.0
     envalid: ^7.2.2
     eslint: ^8.4.1

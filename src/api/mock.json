@@ -1,0 +1,128 @@
+{
+  "data": {
+    "first_available": "2021-12-29",
+    "dates": {
+      "2021-12-28": {
+        "availability": 0,
+        "capacity": 12,
+        "available_for_checkin": false,
+        "timeslots": {
+          "18:00": {
+            "availability": 0,
+            "capacity": 12,
+            "available_for_checkin": false
+          }
+        }
+      },
+      "2021-12-29": {
+        "availability": 1,
+        "capacity": 24,
+        "available_for_checkin": true,
+        "timeslots": {
+          "15:00": {
+            "availability": 0,
+            "capacity": 12,
+            "available_for_checkin": false
+          },
+          "16:00": {
+            "availability": 1,
+            "capacity": 12,
+            "available_for_checkin": true
+          }
+        }
+      },
+      "2021-12-30": {
+        "availability": 0,
+        "capacity": 12,
+        "available_for_checkin": false,
+        "timeslots": {
+          "16:00": {
+            "availability": 0,
+            "capacity": 12,
+            "available_for_checkin": false
+          }
+        }
+      },
+      "2022-01-05": {
+        "availability": 1,
+        "capacity": 24,
+        "available_for_checkin": true,
+        "timeslots": {
+          "17:00": {
+            "availability": 0,
+            "capacity": 12,
+            "available_for_checkin": false
+          },
+          "19:00": {
+            "availability": 1,
+            "capacity": 12,
+            "available_for_checkin": true
+          }
+        }
+      },
+      "2022-01-06": {
+        "availability": 2,
+        "capacity": 12,
+        "available_for_checkin": true,
+        "timeslots": {
+          "19:00": {
+            "availability": 2,
+            "capacity": 12,
+            "available_for_checkin": true
+          }
+        }
+      },
+      "2022-01-07": {
+        "availability": 4,
+        "capacity": 24,
+        "available_for_checkin": true,
+        "timeslots": {
+          "18:00": {
+            "availability": 3,
+            "capacity": 12,
+            "available_for_checkin": true
+          },
+          "19:00": {
+            "availability": 1,
+            "capacity": 12,
+            "available_for_checkin": true
+          }
+        }
+      },
+      "2022-01-08": {
+        "availability": 2,
+        "capacity": 24,
+        "available_for_checkin": true,
+        "timeslots": {
+          "17:00": {
+            "availability": 1,
+            "capacity": 12,
+            "available_for_checkin": true
+          },
+          "18:00": {
+            "availability": 1,
+            "capacity": 12,
+            "available_for_checkin": true
+          }
+        }
+      },
+      "2022-01-09": {
+        "availability": 15,
+        "capacity": 24,
+        "available_for_checkin": true,
+        "timeslots": {
+          "19:00": {
+            "availability": 3,
+            "capacity": 12,
+            "available_for_checkin": true
+          },
+          "20:00": {
+            "availability": 12,
+            "capacity": 12,
+            "available_for_checkin": true
+          }
+        }
+      }
+    }
+  }
+}
