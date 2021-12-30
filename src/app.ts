@@ -13,6 +13,7 @@ import languageMenu from '@/menus/language'
 import sendHelp from '@/handlers/help'
 import showProducts from '@/handlers/showProducts'
 import startMongo from '@/helpers/startMongo'
+import startWebserver from '@/helpers/startWebserver'
 import subscribe from '@/handlers/subscribe'
 
 async function runApp() {
@@ -45,3 +46,4 @@ async function runApp() {
 }
 
 void runApp()
+void startWebserver()

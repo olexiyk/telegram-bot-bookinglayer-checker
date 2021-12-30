@@ -1,5 +1,5 @@
 import * as dotenv from 'dotenv'
-import { cleanEnv, str } from 'envalid'
+import { cleanEnv, num, str } from 'envalid'
 import { cwd } from 'process'
 import { resolve } from 'path'
 
@@ -10,4 +10,5 @@ export default cleanEnv(process.env, {
   TOKEN: str(),
   MONGO: str(),
   BUSINESS_DOMAIN: str(),
+  PORT: num(),
 })
