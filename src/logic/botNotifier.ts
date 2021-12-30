@@ -6,18 +6,20 @@ import { DocumentType } from '@typegoose/typegoose'
 import { I18nContext } from '@grammyjs/i18n'
 import { Product, findAllProducts } from '@/models/Product'
 import { User, findUserBySubscribedProduct } from '@/models/User'
-import { enGB, ko, ru, uk } from 'date-fns/locale'
+import { enGB, ko, ru, uk, de } from 'date-fns/locale'
 import { format } from 'date-fns'
 import { getProductAvailabilities } from '@/api/BookingLayer'
 import bot from '@/helpers/bot'
 import env from '@/helpers/env'
 import i18n from '@/helpers/i18n'
+import shouldNotify, { saveNotification } from '@/logic/notificationDecider'
 
 const locales = {
   en: enGB,
   uk: uk,
   ru: ru,
   kr: ko,
+  de: de,
 }
 
 export default async function notifyAllSubscribedUsers() {
@@ -25,21 +27,26 @@ export default async function notifyAllSubscribedUsers() {
   console.log(`Found ${allProducts.length} products`)
 
   for (const product of allProducts) {
+    const allSubscribedUsers = await findUserBySubscribedProduct(product.id)
+    console.log(
+      `${allSubscribedUsers.length} users subscribed to updates for ${product.name}`
+    )
+    if (allSubscribedUsers.length === 0) {
+      continue
+    }
+
     const apiProductAvailabilities = await getProductAvailabilities(
       // eslint-disable-next-line @typescript-eslint/no-unsafe-argument
       product.id,
       new Date(),
       14,
-      // mock data
-      true
     )
-    // eslint-disable-next-line @typescript-eslint/no-unsafe-argument
-    const allSubscribedUsers = await findUserBySubscribedProduct(product.id)
-    console.log(
-      `${allSubscribedUsers.length} users subscribed to updates for ${product.name}`
-    )
+
     for (const user of allSubscribedUsers) {
-      await notifyUser(user, apiProductAvailabilities, product)
+      if (await shouldNotify(user, product.id)) {
+        await notifyUser(user, apiProductAvailabilities, product)
+        await saveNotification(user, product)
+      }
     }
   }
 }

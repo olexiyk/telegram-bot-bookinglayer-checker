@@ -1,7 +1,7 @@
 languageName: Українська
 help: |
   Привіт друже! Цей бот допомагає отримувати повідомлення про наявні місця у ${business}
-showProducts: Показати продукти.
+showProducts: Показати продукти
 languageSelector: Вибір мови (change language)
 languageWasSelected: Тепер бот буде відправляти вам повідомлення українською мовою
 availableProducts: |
@@ -18,5 +18,5 @@ availableTimeslotsWithinNextTwoWeeks: |
 availableTimeAndAvailabilityLeft: |
   ${time} ⏰ залишилось місць ${availability}
 noAvailableTimeslotsWithinNextTwoWeeks: |
-  На ближчі 2 тижні немає доступних часових проміжків для ${product}
+  На ближчі 2 тижні немає доступних місць для ${product}
 goToBookingPage: Перейти до сторінки бронювання

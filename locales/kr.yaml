@@ -1,15 +1,15 @@
 languageName: 한국어
-help: 안녕 친구! 이 봇은 ${business}의 새로운 약속에 대해 알립니다.
+help: 안녕 친구! 이 봇은 ${business}의 새로운 약속에 대해 알립니다
 showProducts: 상품 보기
 languageSelector: 언어 설정 변경 (change language)
-languageWasSelected: 이 봇은 한국어로 메시지를 보냅니다.
+languageWasSelected: 이 봇은 한국어로 메시지를 보냅니다
 availableProducts: 사용 가능한 상품
-youAreSubscribed: 구독 중입니다.
-subscribedToReceiveNotificationForTheProduct: ${product} 제품에 대한 알림을 수신하도록 구독했습니다.
-unsubscribedFromNotificationForTheProduct: ${product} 제품에 대한 알림을 수신하지 않으도록 구독을 취소했습니다.
-firstAvailableDateForProduct: ${product} 제품의 첫 사용 가능 날짜는 ${date}입니다.
-availableTimeslotsWithinNextTwoWeeks: ${product} 제품의 사용 가능 시간대는 다음 두 주 내에서 아래와 같습니다.
+youAreSubscribed: 구독 중입니다
+subscribedToReceiveNotificationForTheProduct: ${product} 제품에 대한 알림을 수신하도록 구독했습니다
+unsubscribedFromNotificationForTheProduct: ${product} 제품에 대한 알림을 수신하지 않으도록 구독을 취소했습니다
+firstAvailableDateForProduct: ${product} 제품의 첫 사용 가능 날짜는 ${date}입니다
+availableTimeslotsWithinNextTwoWeeks: ${product} 제품의 사용 가능 시간대는 다음 두 주 내에서 아래와 같습니다
 availableTimeAndAvailabilityLeft: |
-  ${time} ⏰ ${availability}자리 남음.
-noAvailableTimeslotsWithinNextTwoWeeks: ${product} 제품의 사용 가능 시간대는 다음 두 주 내에서 없습니다.
+  ${time} ⏰ ${availability}자리 남음
+noAvailableTimeslotsWithinNextTwoWeeks: ${product} 제품의 사용 가능 시간대는 다음 두 주 내에서 없습니다
 goToBookingPage: 예약 페이지로 이동

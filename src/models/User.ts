@@ -14,6 +14,8 @@ export class User {
   language!: string
   @prop({ required: true, default: [], index: true })
   subscribedProducts!: string[]
+  @prop({ default: 86_400 })
+  notificationInterval?: number
 }
 
 const UserModel = getModelForClass(User)

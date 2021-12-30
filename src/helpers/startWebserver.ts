@@ -12,6 +12,6 @@ export default function startWebserver() {
   })
 
   app.listen(env.PORT, () => {
-    console.log(`Bot is listening on port 3000!`)
+    console.log(`Bot is listening on port ${env.PORT}`)
   })
 }
