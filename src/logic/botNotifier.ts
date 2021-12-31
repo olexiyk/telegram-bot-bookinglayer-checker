@@ -6,7 +6,7 @@ import { DocumentType } from '@typegoose/typegoose'
 import { I18nContext } from '@grammyjs/i18n'
 import { Product, findAllProducts } from '@/models/Product'
 import { User, findUserBySubscribedProduct } from '@/models/User'
-import { enGB, ko, ru, uk, de } from 'date-fns/locale'
+import { de, enGB, ko, ru, uk } from 'date-fns/locale'
 import { format } from 'date-fns'
 import { getProductAvailabilities } from '@/api/BookingLayer'
 import bot from '@/helpers/bot'
@@ -39,7 +39,7 @@ export default async function notifyAllSubscribedUsers() {
       // eslint-disable-next-line @typescript-eslint/no-unsafe-argument
       product.id,
       new Date(),
-      14,
+      14
     )
 
     for (const user of allSubscribedUsers) {
@@ -75,7 +75,6 @@ function notifyAboutTimeslots(
         .join('\n')
     )
   }
-  // url: 'https://' + env.BUSINESS_DOMAIN,
 
   return bot.api.sendMessage(
     user.id,

@@ -1,4 +1,9 @@
-import { getModelForClass, index, modelOptions, prop } from '@typegoose/typegoose'
+import {
+  getModelForClass,
+  index,
+  modelOptions,
+  prop,
+} from '@typegoose/typegoose'
 
 @index({ userId: 1, productId: 1 }, { unique: true }) // compound index
 @modelOptions({ schemaOptions: { timestamps: true } })
@@ -13,7 +18,11 @@ export class Notification {
 
 const NotificationModel = getModelForClass(Notification)
 
-export function createOrUpdateLastNotifiedDate(userId: number, productId: string, date: Date) {
+export function createOrUpdateLastNotifiedDate(
+  userId: number,
+  productId: string,
+  date: Date
+) {
   return NotificationModel.findOneAndUpdate(
     { userId, productId },
     { lastNotifiedDate: date },

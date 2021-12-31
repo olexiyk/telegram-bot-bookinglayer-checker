@@ -51,4 +51,27 @@ export class ApiProductAvailabilities {
     }
     this.availabilities = availabilities
   }
+
+  public getHash(): string {
+    return (
+      this.firstAvailableDate.toISOString() +
+      '-' +
+      this.availabilities
+        .map((availability) =>
+          availability.timeslots
+            .map(
+              (timeslot) =>
+                timeslot.dateTime.toISOString() +
+                '-' +
+                timeslot.availability +
+                '-' +
+                timeslot.capacity +
+                '-' +
+                timeslot.availableForCheckin
+            )
+            .join('-')
+        )
+        .join('-')
+    )
+  }
 }
