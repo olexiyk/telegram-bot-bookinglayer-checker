@@ -1,8 +1,11 @@
 languageName: Українська
 help: |
-  Привіт друже! Цей бот допомагає отримувати повідомлення про наявні місця у ${business}
-showProducts: Показати продукти
+  Привіт друже! Цей бот допомагає отримувати повідомлення про наявні місця у ${business} ${interval}
+  
+  Для того, щоб почати отримувати повідомлення, виберіть наявні продукти
+selectAvailableProducts: Вибрати продукти
 languageSelector: Вибір мови (change language)
+changeNotificationInterval: Змінити інтервал повідомлень
 languageWasSelected: Тепер бот буде відправляти вам повідомлення українською мовою
 availableProducts: |
   Можна підписатися на повідомлення про такі продукти:
@@ -20,9 +23,6 @@ availableTimeAndAvailabilityLeft: |
 noAvailableTimeslotsWithinNextTwoWeeks: |
   На ближчі 2 тижні немає доступних місць
 goToBookingPage: Перейти до сторінки бронювання
-setNotificationInterval: Встановити інтервал повідомлень
-currentNotificationInterval: |
-  Поточний інтервал: ${interval}
 notificationIntervalWasUpdated: Інтервал повідомлень було оновлено до <b>${interval}</b>
 notificationIntervalSelector: |
   Бот буде надсилати якнайбільш одне повідомлення за вибраний інтервал. 

@@ -1,6 +1,9 @@
 languageName: Русский
-help: Привет! Этот бот поможет получить сообщения о наличии мест в ${business}
-showProducts: Показать продукты
+help:
+  Привет! Этот бот поможет получить сообщения о наличии мест в ${business} ${interval}
+
+  Для начала получения уведомлений, выберите доступные продукты
+selectAvailableProducts: Выберите продукты
 languageSelector: Выберите язык (change language)
 languageWasSelected: Язык был выбран
 availableProducts: Доступные продукты
@@ -16,9 +19,7 @@ noAvailableTimeslotsWithinNextTwoWeeks: |
   Нет доступных слотов в течение следующих двух недель.
   Бронирование возможно только в течение двух недель
 goToBookingPage: Перейти к странице бронирования
-setNotificationInterval: Установить интервал уведомлений
-currentNotificationInterval: |
-  Текущий интервал: ${interval}
+changeNotificationInterval: Изменить интервал уведомлений
 notificationIntervalWasUpdated: Интервал уведомлений был обновлен на <b>${interval}</b>
 notificationIntervalSelector: |
   Бот будет отправлять не более 1 сообщения за выбранный интервал. 

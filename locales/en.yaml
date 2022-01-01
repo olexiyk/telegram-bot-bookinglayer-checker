@@ -1,7 +1,9 @@
 languageName: English
-help: |
-  Hello, friend! This bot will notify about new available appointments for ${business}
-showProducts: View available products
+help:
+  Hello, friend! This bot will notify about new available appointments for ${business} ${interval}
+  
+  In order to start receiving notifications, select available products
+selectAvailableProducts: Select available products
 languageSelector: Change language settings
 languageWasSelected: <b>This bot</b> now speaks English.
 availableProducts: |
@@ -21,9 +23,7 @@ noAvailableTimeslotsWithinNextTwoWeeks: |
   There are not available timeslots within next two weeks.
   Booking is only possible within two weeks
 goToBookingPage: Go to booking page
-setNotificationInterval: Set notification interval
-currentNotificationInterval: |
-  Current interval: ${interval}
+changeNotificationInterval: Change notification interval
 notificationIntervalWasUpdated: Notification interval was updated to <b>${interval}</b>
 notificationIntervalSelector: |
   The bot will send at most 1 message per selected interval. 

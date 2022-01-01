@@ -1,12 +1,12 @@
 languageName: Deutsch
 help: |
-  Hallo, Freund! Dieser Bot wird dich über neue verfügbare Termine für ${business} benachrichtigen.
-showProducts: Verfügbare Produkte anzeigen
+  Hallo, Freund! Dieser Bot wird dich über neue verfügbare Termine für ${business} ${interval} benachrichtigen.
+  
+  Um Benachrichtigungen zu erhalten, wähle die verfügbaren Produkte aus
+selectAvailableProducts: Wähle die verfügbaren Produkte
 languageSelector: Spracheinstellungen ändern
 languageWasSelected: <b>Dieser Bot</b> spricht jetzt Deutsch.
-setNotificationInterval: Benachrichtigungsintervall festlegen
-currentNotificationInterval: |
-  Aktuelles Intervall: ${interval}
+changeNotificationInterval: Benachrichtigungsintervall ändern
 notificationIntervalWasUpdated: Benachrichtigungsintervall wurde auf <b>${interval}</b> geändert
 notificationIntervalSelector: |
   Der Bot wird maximal 1 Nachricht pro gewählten Intervall senden. 

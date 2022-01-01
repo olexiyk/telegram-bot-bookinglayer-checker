@@ -29,7 +29,9 @@ export const notificationIntervalMenu = new Menu<Context>(
 enabledNotificationIntervals.forEach((interval) => {
   notificationIntervalMenu
     .text(
-      (ctx) => ctx.i18n.t(`notificationInterval.${interval}`),
+      (ctx) =>
+        (ctx.dbuser.notificationInterval === interval ? '✅ ' : '') +
+        ctx.i18n.t(`notificationInterval.${interval}`),
       setNotificationInterval(interval)
     )
     .row()
