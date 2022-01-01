@@ -1,3 +1,4 @@
+import * as crypto from 'crypto'
 import { ApiProductAvailabilities } from '@/api/ApiProductAvailabilities'
 import { Product } from '@/models/Product'
 import { User } from '@/models/User'
@@ -40,12 +41,8 @@ export default async function shouldNotify(
   }
 }
 
-function hash(s: string): number {
-  let h = 0
-  const l = s.length
-  let i = 0
-  if (l > 0) while (i < l) h = ((h << 5) - h + s.charCodeAt(i++)) | 0
-  return h
+function hash(string: string): string {
+  return crypto.createHash('md5').update(string).digest('hex')
 }
 
 export async function saveNotification(

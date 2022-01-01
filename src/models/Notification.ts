@@ -15,7 +15,7 @@ export class Notification {
   @prop({ required: true })
   lastNotifiedDate!: Date
   @prop({ required: true, default: 0 })
-  productAvailabilityHash!: number
+  productAvailabilityHash!: string
 }
 
 const NotificationModel = getModelForClass(Notification)
@@ -24,7 +24,7 @@ export function createOrUpdateLastNotifiedDate(
   userId: number,
   productId: string,
   lastNotifiedDate: Date,
-  productAvailabilityHash: number
+  productAvailabilityHash: string
 ) {
   return NotificationModel.findOneAndUpdate(
     { userId, productId },
