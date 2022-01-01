@@ -43,9 +43,9 @@ export default async function notifyAllSubscribedUsers() {
     )
 
     for (const user of allSubscribedUsers) {
-      if (await shouldNotify(user, product.id)) {
+      if (await shouldNotify(user, product.id, apiProductAvailabilities)) {
         await notifyUser(user, apiProductAvailabilities, product)
-        await saveNotification(user, product)
+        await saveNotification(user, product, apiProductAvailabilities)
       }
     }
   }

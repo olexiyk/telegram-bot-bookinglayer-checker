@@ -14,6 +14,8 @@ export class Notification {
   productId!: string
   @prop({ required: true })
   lastNotifiedDate!: Date
+  @prop({ required: true, default: 0 })
+  productAvailabilityHash!: number
 }
 
 const NotificationModel = getModelForClass(Notification)
@@ -21,11 +23,12 @@ const NotificationModel = getModelForClass(Notification)
 export function createOrUpdateLastNotifiedDate(
   userId: number,
   productId: string,
-  date: Date
+  lastNotifiedDate: Date,
+  productAvailabilityHash: number
 ) {
   return NotificationModel.findOneAndUpdate(
     { userId, productId },
-    { lastNotifiedDate: date },
+    { lastNotifiedDate, productAvailabilityHash },
     { upsert: true, new: true }
   )
 }

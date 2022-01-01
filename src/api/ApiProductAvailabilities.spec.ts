@@ -40,7 +40,7 @@ describe('MyClass', () => {
       },
     }
     const apiProductAvailabilities = new ApiProductAvailabilities(data)
-    expect(apiProductAvailabilities.getHash()).toBe(
+    expect(apiProductAvailabilities.getFingerprint()).toBe(
       '2021-11-25T00:00:00.000Z-2021-11-24T17:00:00.000Z-0-10-false-2021-11-25T14:00:00.000Z-0-12-false-2021-11-25T18:00:00.000Z-1-10-true'
     )
   })

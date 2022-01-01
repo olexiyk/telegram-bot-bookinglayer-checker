@@ -52,7 +52,7 @@ export class ApiProductAvailabilities {
     this.availabilities = availabilities
   }
 
-  public getHash(): string {
+  public getFingerprint(): string {
     return (
       this.firstAvailableDate.toISOString() +
       '-' +
