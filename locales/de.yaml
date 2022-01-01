@@ -4,8 +4,20 @@ help: |
 showProducts: Verfügbare Produkte anzeigen
 languageSelector: Spracheinstellungen ändern
 languageWasSelected: <b>Dieser Bot</b> spricht jetzt Deutsch.
+setNotificationInterval: Benachrichtigungsintervall festlegen
+currentNotificationInterval: |
+  Aktuelles Intervall: ${interval}
+notificationIntervalWasUpdated: Benachrichtigungsintervall wurde auf <b>${interval}</b> geändert
+notificationIntervalSelector: |
+  Der Bot wird maximal 1 Nachricht pro gewählten Intervall senden. 
+  Wenn die Verfügbarkeit für die gewählten Produkte nicht sich ändert, wird die Benachrichtigung nicht gesendet
+notificationInterval.28800: Jede 8 Stunden
+notificationInterval.43200: Jede 12 Stunden
+notificationInterval.86400: Jeden Tag
+notificationInterval.172800: Jede 2 Tage
+notificationInterval.259200: Jede 3 Tage
 availableProducts: |
-  Es ist möglich, sich für die Updates für folgende Produkte anzumelden:
+  Es ist möglich, sich für die Benachrichtigungen für folgende Produkte anzumelden:
 youAreSubscribed: Du bist angemeldet
 subscribedToReceiveNotificationForTheProduct: |
   Du bist für folgendes Produkt angemeldet: ${product}

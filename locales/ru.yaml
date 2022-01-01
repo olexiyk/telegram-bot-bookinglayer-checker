@@ -13,3 +13,15 @@ availableTimeAndAvailabilityLeft: |
   ${time} ⏰ осталось мест ${availability}
 noAvailableTimeslotsWithinNextTwoWeeks: Нет доступных слотов в течение следующих двух недель для продукта ${product}
 goToBookingPage: Перейти к странице бронирования
+setNotificationInterval: Установить интервал уведомлений
+currentNotificationInterval: |
+  Текущий интервал: ${interval}
+notificationIntervalWasUpdated: Интервал уведомлений был обновлен на <b>${interval}</b>
+notificationIntervalSelector: |
+  Бот будет отправлять не более 1 сообщения за выбранный интервал. 
+  Если наличие для выбранных продуктов не изменится, уведомление не будет отправлено
+notificationInterval.28800: Раз в 8 часов
+notificationInterval.43200: Раз в 12 часов
+notificationInterval.86400: Раз в день
+notificationInterval.172800: Раз в 2 дня
+notificationInterval.259200: Раз в 3 дня

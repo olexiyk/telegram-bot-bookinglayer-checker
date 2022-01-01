@@ -20,3 +20,15 @@ availableTimeAndAvailabilityLeft: |
 noAvailableTimeslotsWithinNextTwoWeeks: |
   На ближчі 2 тижні немає доступних місць для ${product}
 goToBookingPage: Перейти до сторінки бронювання
+setNotificationInterval: Встановити інтервал повідомлень
+currentNotificationInterval: |
+  Поточний інтервал: ${interval}
+notificationIntervalWasUpdated: Інтервал повідомлень було оновлено до <b>${interval}</b>
+notificationIntervalSelector: |
+  Бот буде надсилати якнайбільш одне повідомлення за вибраний інтервал. 
+  Якщо доступність для вибраних продуктів не зміниться, повідомлення не буде надіслано
+notificationInterval.28800: Раз на 8 годин
+notificationInterval.43200: Раз на 12 годин
+notificationInterval.86400: Раз на день
+notificationInterval.172800: Раз на 2 дні
+notificationInterval.259200: Раз на 3 дні
