@@ -14,11 +14,12 @@ unsubscribedFromNotificationForTheProduct: |
 firstAvailableDateForProduct: |
   The first available appointment for ${product} is on ${date}
 availableTimeslotsWithinNextTwoWeeks: |
-  The following timeslots are available for ${product} within next two weeks:
+  The following timeslots are available within the next two weeks:
 availableTimeAndAvailabilityLeft: |
   ${time} ⏰ ${availability} slots left
 noAvailableTimeslotsWithinNextTwoWeeks: |
-  There are no available timeslots for ${product} within next two weeks.
+  There are not available timeslots within next two weeks.
+  Booking is only possible within two weeks
 goToBookingPage: Go to booking page
 setNotificationInterval: Set notification interval
 currentNotificationInterval: |
@@ -27,8 +28,8 @@ notificationIntervalWasUpdated: Notification interval was updated to <b>${interv
 notificationIntervalSelector: |
   The bot will send at most 1 message per selected interval. 
   If the availability for the selected products does not change, the notification will not be sent
-notificationInterval.28800: Once every 8 hours
-notificationInterval.43200: Once every 12 hours
+notificationInterval.28800: Every 8 hours
+notificationInterval.43200: Every 12 hours
 notificationInterval.86400: Once a day
-notificationInterval.172800: Once every 2 days
-notificationInterval.259200: Once every 3 days
+notificationInterval.172800: Every 2 days
+notificationInterval.259200: Every 3 days

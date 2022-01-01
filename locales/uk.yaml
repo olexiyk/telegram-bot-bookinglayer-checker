@@ -14,11 +14,11 @@ unsubscribedFromNotificationForTheProduct: |
 firstAvailableDateForProduct: |
   Перша дата доступна для ${product}: ${date}
 availableTimeslotsWithinNextTwoWeeks: |
-  Доступні часові проміжки для ${product} в ближчі 2 тижні:
+  Доступні такі слоти в найближчі 2 тижні:
 availableTimeAndAvailabilityLeft: |
   ${time} ⏰ залишилось місць ${availability}
 noAvailableTimeslotsWithinNextTwoWeeks: |
-  На ближчі 2 тижні немає доступних місць для ${product}
+  На ближчі 2 тижні немає доступних місць
 goToBookingPage: Перейти до сторінки бронювання
 setNotificationInterval: Встановити інтервал повідомлень
 currentNotificationInterval: |

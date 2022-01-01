@@ -8,10 +8,13 @@ youAreSubscribed: Вы подписаны
 subscribedToReceiveNotificationForTheProduct: Вы подписаны на уведомления для продукта ${product}
 unsubscribedFromNotificationForTheProduct: Вы отписаны от уведомлений для продукта ${product}
 firstAvailableDateForProduct: Доступная дата для продукта ${product} ${date}
-availableTimeslotsWithinNextTwoWeeks: Доступные слоты в течение следующих двух недель для продукта ${product}
+availableTimeslotsWithinNextTwoWeeks: |
+  Доступные такие слоты в течение следующих двух недель:
 availableTimeAndAvailabilityLeft: |
   ${time} ⏰ осталось мест ${availability}
-noAvailableTimeslotsWithinNextTwoWeeks: Нет доступных слотов в течение следующих двух недель для продукта ${product}
+noAvailableTimeslotsWithinNextTwoWeeks: |
+  Нет доступных слотов в течение следующих двух недель.
+  Бронирование возможно только в течение двух недель
 goToBookingPage: Перейти к странице бронирования
 setNotificationInterval: Установить интервал уведомлений
 currentNotificationInterval: |

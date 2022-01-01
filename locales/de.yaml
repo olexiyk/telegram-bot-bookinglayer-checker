@@ -26,9 +26,10 @@ unsubscribedFromNotificationForTheProduct: |
 firstAvailableDateForProduct: |
   Der erste verfügbare Termin für ${product} ist am ${date}
 availableTimeslotsWithinNextTwoWeeks: |
-  Die folgenden Zeitfenster sind für ${product} innerhalb der nächsten zwei Wochen verfügbar:
+  Die folgenden Zeitfenster sind innerhalb der nächsten zwei Wochen verfügbar:
 availableTimeAndAvailabilityLeft: |
   ${time} ⏰ ${availability} Zeitfenster übrig
 noAvailableTimeslotsWithinNextTwoWeeks: |
-  Es sind keine verfügbaren Zeitfenster für ${product} innerhalb der nächsten zwei Wochen verfügbar.
+  Es sind keine verfügbaren Zeiten in den nächsten zwei Wochen.
+  Buchung ist nur innerhalb der nächsten zwei Wochen möglich
 goToBookingPage: Zum Buchungsseite gehen

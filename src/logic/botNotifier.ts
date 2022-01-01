@@ -6,20 +6,20 @@ import { DocumentType } from '@typegoose/typegoose'
 import { I18nContext } from '@grammyjs/i18n'
 import { Product, findAllProducts } from '@/models/Product'
 import { User, findUserBySubscribedProduct } from '@/models/User'
-import { de, enGB, ko, ru, uk } from 'date-fns/locale'
-import { format } from 'date-fns'
 import { getProductAvailabilities } from '@/api/BookingLayer'
 import bot from '@/helpers/bot'
 import env from '@/helpers/env'
 import i18n from '@/helpers/i18n'
 import shouldNotify, { saveNotification } from '@/logic/notificationDecider'
 
-const locales = {
-  en: enGB,
-  uk: uk,
-  ru: ru,
-  kr: ko,
-  de: de,
+const locales: {
+  [key: string]: string
+} = {
+  en: 'en-GB',
+  uk: 'uk',
+  ru: 'ru',
+  kr: 'ko',
+  de: 'de',
 }
 
 export default async function notifyAllSubscribedUsers() {
@@ -55,7 +55,8 @@ function notifyAboutTimeslots(
   availableTimeslots: Timeslot[][],
   user: User,
   ctx: I18nContext,
-  product: Product
+  product: Product,
+  firstAvailableDateMessage: string
 ) {
   const availableTimeslotsMessage: string[] = []
 
@@ -63,10 +64,17 @@ function notifyAboutTimeslots(
     availableTimeslotsMessage.push(
       availableTimeslot
         .map((timeslot) => {
-          const formattedTime = format(timeslot.dateTime, 'yyyy-MM-dd HH:mm', {
-            // @ts-ignore
-            locale: locales[user.language],
-          })
+          const formattedTime = timeslot.dateTime.toLocaleTimeString(
+            locales[user.language],
+            {
+              weekday: 'short',
+              year: 'numeric',
+              day: 'numeric',
+              month: 'numeric',
+              hour: '2-digit',
+              minute: '2-digit',
+            }
+          )
           return ctx.t('availableTimeAndAvailabilityLeft', {
             time: formattedTime,
             availability: timeslot.availability,
@@ -78,7 +86,8 @@ function notifyAboutTimeslots(
 
   return bot.api.sendMessage(
     user.id,
-    `${ctx.t('availableTimeslotsWithinNextTwoWeeks', { product: product.name })}
+    `${firstAvailableDateMessage} 
+${ctx.t('availableTimeslotsWithinNextTwoWeeks')}
 ${availableTimeslotsMessage.join('\n')}`,
     {
       parse_mode: 'HTML',
@@ -99,11 +108,13 @@ ${availableTimeslotsMessage.join('\n')}`,
 function notifyAboutNoneAvailableTimeslots(
   user: User,
   ctx: I18nContext,
-  product: Product
+  product: Product,
+  firstAvailableDateMessage: string
 ) {
   return bot.api.sendMessage(
     user.id,
-    ctx.t('noAvailableTimeslotsWithinNextTwoWeeks', { product: product.name }),
+    `${firstAvailableDateMessage} 
+${ctx.t('noAvailableTimeslotsWithinNextTwoWeeks')}`,
     {
       parse_mode: 'HTML',
       reply_markup: {
@@ -129,19 +140,13 @@ async function notifyUser(
   await bot.init()
 
   const ctx: I18nContext = i18n.createContext(user.language, {})
-
-  const formattedDate = format(
-    apiProductAvailabilities.firstAvailableDate,
-    'dd LLLL yyyy',
-    // @ts-ignore
-    { locale: locales[user.language] }
-  )
   const firstAvailableDateMessage = ctx.t('firstAvailableDateForProduct', {
     product: product.name,
-    date: formattedDate,
+    date: apiProductAvailabilities.firstAvailableDate.toLocaleDateString(
+      locales[user.language],
+      { weekday: 'long', year: 'numeric', day: 'numeric', month: 'long' }
+    ),
   })
-
-  await bot.api.sendMessage(user.id, firstAvailableDateMessage)
 
   const availableTimeslots = apiProductAvailabilities.availabilities
     .filter((availability) => availability.availableForCheckin)
@@ -150,8 +155,19 @@ async function notifyUser(
     )
 
   if (availableTimeslots.length > 0) {
-    return notifyAboutTimeslots(availableTimeslots, user, ctx, product)
+    return notifyAboutTimeslots(
+      availableTimeslots,
+      user,
+      ctx,
+      product,
+      firstAvailableDateMessage
+    )
   } else {
-    return notifyAboutNoneAvailableTimeslots(user, ctx, product)
+    return notifyAboutNoneAvailableTimeslots(
+      user,
+      ctx,
+      product,
+      firstAvailableDateMessage
+    )
   }
 }

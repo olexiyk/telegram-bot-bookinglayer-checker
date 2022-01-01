@@ -11,7 +11,9 @@ firstAvailableDateForProduct: ${product} 제품의 첫 사용 가능 날짜는 $
 availableTimeslotsWithinNextTwoWeeks: ${product} 제품의 사용 가능 시간대는 다음 두 주 내에서 아래와 같습니다
 availableTimeAndAvailabilityLeft: |
   ${time} ⏰ ${availability}자리 남음
-noAvailableTimeslotsWithinNextTwoWeeks: ${product} 제품의 사용 가능 시간대는 다음 두 주 내에서 없습니다
+noAvailableTimeslotsWithinNextTwoWeeks: |
+  다음 두 주 내에 사용 가능한 시간대가 없습니다
+  예약은 다음 두 주 내에만 가능합니다
 goToBookingPage: 예약 페이지로 이동
 setNotificationInterval: 알림 간격 설정
 currentNotificationInterval: |
