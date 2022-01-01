@@ -4,6 +4,18 @@ help: |
 showProducts: View available products
 languageSelector: Change language settings
 languageWasSelected: <b>This bot</b> now speaks English.
+setNotificationInterval: Set notification interval
+currentNotificationInterval: |
+  Current interval: ${interval}
+notificationIntervalWasUpdated: Notification interval was updated to <b>${interval}</b>
+notificationIntervalSelector: | 
+  The bot will sent at most 1 message per selected interval. 
+  If availability does not change for the selected products, the notification will not be sent
+notificationInterval.28800: Once every 8 hours
+notificationInterval.43200: Once every 12 hours
+notificationInterval.86400: Once a day
+notificationInterval.172800: Once every 2 days
+notificationInterval.259200: Once every 3 days
 availableProducts: |
   It is possible to subscribe to the updates for following products:
 youAreSubscribed: you are subscribed

@@ -14,7 +14,8 @@
     "devLoadProducts": "tsc-watch --skipLibCheck --onSuccess 'node dist/cronjobs/loadProducts.js'",
     "runLoadProducts": "yarn build-ts && node dist/cronjobs/loadProducts.js",
     "lint": "yarn pretty && eslint --max-warnings 0 --ext ts,tsx,json src",
-    "test": "jest"
+    "test": "jest",
+    "lintFix": "yarn lint --fix"
   },
   "dependencies": {
     "@grammyjs/i18n": "^0.5.0",
