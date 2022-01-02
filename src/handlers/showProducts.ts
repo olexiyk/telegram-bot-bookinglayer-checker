@@ -1,10 +1,9 @@
-import { DocumentType } from '@typegoose/typegoose'
 import { InlineKeyboardButton } from '@grammyjs/types/inline'
 import { Product, findAllProducts } from '@/models/Product'
 import Context from '@/models/Context'
 
 export default async function showProducts(ctx: Context) {
-  const allProducts: DocumentType<Product>[] = await findAllProducts().exec()
+  const allProducts: Product[] = await findAllProducts().exec()
   const inlineKeyboard: InlineKeyboardButton[][] = []
 
   for (const product of allProducts) {

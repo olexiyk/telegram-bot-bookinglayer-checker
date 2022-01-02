@@ -1,9 +1,9 @@
 // eslint-disable-next-line no-relative-import-paths/no-relative-import-paths
 import * as mockData from './mock.json'
-import { ApiProduct } from '@/api/ApiProduct'
 import { ApiProductAvailabilities } from '@/api/ApiProductAvailabilities'
 import { addDays, format } from 'date-fns'
 import { fetch } from 'grammy/out/shim.node'
+import ApiProduct from '@/api/ApiProduct'
 import env from '@/helpers/env'
 
 const BASE_API = 'https://api.bookinglayer.io/public'

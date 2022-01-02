@@ -1,19 +1,30 @@
 import * as crypto from 'crypto'
 import { ApiProductAvailabilities } from '@/api/ApiProductAvailabilities'
-import { Product } from '@/models/Product'
-import { User } from '@/models/User'
 import {
+  Notification,
   createOrUpdateLastNotifiedDate,
   findLastNotification,
 } from '@/models/Notification'
+import { Product } from '@/models/Product'
+import { User } from '@/models/User'
 
-export default async function shouldNotify(
+function wasUserNotifiedRecently(user: User, lastNotification: Notification) {
+  return (
+    Date.now() - lastNotification.lastNotifiedDate.getTime() <
+    user.notificationInterval * 1000
+  )
+}
+
+export async function shouldNotify(
   user: User,
   productId: string,
   apiProductAvailabilities: ApiProductAvailabilities
 ): Promise<boolean> {
-  const lastNotification = await findLastNotification(user.id, productId).exec()
-  if (!lastNotification) {
+  const lastNotification: Notification | null = await findLastNotification(
+    user.id,
+    productId
+  ).exec()
+  if (lastNotification === null) {
     return true
   }
 
@@ -26,19 +37,7 @@ export default async function shouldNotify(
     )
     return false
   }
-
-  if (
-    user.notificationInterval > 0 &&
-    Date.now() - lastNotification.lastNotifiedDate.getTime() >
-      user.notificationInterval * 1000
-  ) {
-    return true
-  } else {
-    console.info(
-      `Notification skipped because user ${user.id} has not been notified recently`
-    )
-    return false
-  }
+  return true
 }
 
 function hash(string: string): string {
@@ -56,4 +55,26 @@ export async function saveNotification(
     new Date(),
     hash(apiProductAvailabilities.getFingerprint())
   ).exec()
+}
+
+export async function getNotifiableUsers(
+  allSubscribedUsers: User[],
+  productId: string
+) {
+  const notifiableUsers: User[] = []
+  for (const user of allSubscribedUsers) {
+    const lastNotification = await findLastNotification(
+      user.id,
+      productId
+    ).exec()
+    if (lastNotification === null) {
+      notifiableUsers.push(user)
+      continue
+    }
+    if (!wasUserNotifiedRecently(user, lastNotification)) {
+      notifiableUsers.push(user)
+    }
+  }
+
+  return notifiableUsers
 }

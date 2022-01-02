@@ -2,15 +2,18 @@ import {
   ApiProductAvailabilities,
   Timeslot,
 } from '@/api/ApiProductAvailabilities'
-import { DocumentType } from '@typegoose/typegoose'
 import { I18nContext } from '@grammyjs/i18n'
 import { Product, findAllProducts } from '@/models/Product'
 import { User, findUserBySubscribedProduct } from '@/models/User'
+import {
+  getNotifiableUsers,
+  saveNotification,
+  shouldNotify,
+} from '@/logic/notificationDecider'
 import { getProductAvailabilities } from '@/api/BookingLayer'
 import bot from '@/helpers/bot'
 import env from '@/helpers/env'
 import i18n from '@/helpers/i18n'
-import shouldNotify, { saveNotification } from '@/logic/notificationDecider'
 
 const locales: {
   [key: string]: string
@@ -23,15 +26,29 @@ const locales: {
 }
 
 export default async function notifyAllSubscribedUsers() {
-  const allProducts: DocumentType<Product>[] = await findAllProducts().exec()
+  const allProducts: Product[] = await findAllProducts().exec()
   console.log(`Found ${allProducts.length} products`)
 
   for (const product of allProducts) {
     const allSubscribedUsers = await findUserBySubscribedProduct(product.id)
-    console.log(
-      `${allSubscribedUsers.length} users subscribed to updates for ${product.name}`
-    )
+
     if (allSubscribedUsers.length === 0) {
+      continue
+    } else {
+      console.log(
+        `${allSubscribedUsers.length} users subscribed to updates for ${product.name}`
+      )
+    }
+
+    const notifiableUsers = await getNotifiableUsers(
+      allSubscribedUsers,
+      product.id
+    )
+
+    console.log(
+      `${notifiableUsers.length} users have not received notification about ${product.name} recently`
+    )
+    if (notifiableUsers.length === 0) {
       continue
     }
 
@@ -42,7 +59,7 @@ export default async function notifyAllSubscribedUsers() {
       14
     )
 
-    for (const user of allSubscribedUsers) {
+    for (const user of notifiableUsers) {
       if (await shouldNotify(user, product.id, apiProductAvailabilities)) {
         await notifyUser(user, apiProductAvailabilities, product)
         await saveNotification(user, product, apiProductAvailabilities)
