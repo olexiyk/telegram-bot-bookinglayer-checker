@@ -41,7 +41,7 @@ describe('MyClass', () => {
     }
     const apiProductAvailabilities = new ApiProductAvailabilities(data)
     expect(apiProductAvailabilities.getFingerprint()).toBe(
-      '2021-11-25T00:00:00.000Z-2021-11-24T17:00:00.000Z-0-10-false-2021-11-25T14:00:00.000Z-0-12-false-2021-11-25T18:00:00.000Z-1-10-true'
+      '1637798400000-1637773200000-0-10-false-1637848800000-0-12-false-1637863200000-1-10-true'
     )
   })
 })

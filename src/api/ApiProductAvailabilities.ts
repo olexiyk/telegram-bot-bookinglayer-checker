@@ -68,14 +68,14 @@ export class ApiProductAvailabilities {
 
   public getFingerprint(): string {
     return (
-      this.firstAvailableDate.toISOString() +
+      this.firstAvailableDate.getTime() +
       '-' +
       this.availabilities
         .map((availability) =>
           availability.timeslots
             .map(
               (timeslot) =>
-                timeslot.dateTime.toISOString() +
+                timeslot.dateTime.getTime() +
                 '-' +
                 timeslot.availability +
                 '-' +
