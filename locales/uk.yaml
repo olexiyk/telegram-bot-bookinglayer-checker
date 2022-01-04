@@ -15,7 +15,8 @@ subscribedToReceiveNotificationForTheProduct: |
 unsubscribedFromNotificationForTheProduct: |
   Ви відписалися від повідомлень про ${product}
 firstAvailableDateForProduct: |
-  Перша дата доступна для ${product}: ${date}
+  Перша дата доступна для ${product} ${date}
+unknownDate: невідома
 availableTimeslotsWithinNextTwoWeeks: |
   Доступні такі слоти в найближчі 2 тижні:
 availableTimeAndAvailabilityLeft: |

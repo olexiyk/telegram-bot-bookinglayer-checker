@@ -11,6 +11,7 @@ youAreSubscribed: Вы подписаны
 subscribedToReceiveNotificationForTheProduct: Вы подписаны на уведомления для продукта ${product}
 unsubscribedFromNotificationForTheProduct: Вы отписаны от уведомлений для продукта ${product}
 firstAvailableDateForProduct: Доступная дата для продукта ${product} ${date}
+unknownDate: неизвестна
 availableTimeslotsWithinNextTwoWeeks: |
   Доступные такие слоты в течение следующих двух недель:
 availableTimeAndAvailabilityLeft: |

@@ -15,6 +15,8 @@ import bot from '@/helpers/bot'
 import env from '@/helpers/env'
 import i18n from '@/helpers/i18n'
 
+const FETCH_PRODUCT_AVAILABILITY_NUMBER_OF_DAYS = 14
+
 const locales: {
   [key: string]: string
 } = {
@@ -56,7 +58,7 @@ export default async function notifyAllSubscribedUsers() {
       // eslint-disable-next-line @typescript-eslint/no-unsafe-argument
       product.id,
       new Date(),
-      14
+      FETCH_PRODUCT_AVAILABILITY_NUMBER_OF_DAYS
     )
 
     for (const user of notifiableUsers) {
@@ -159,10 +161,13 @@ async function notifyUser(
   const ctx: I18nContext = i18n.createContext(user.language, {})
   const firstAvailableDateMessage = ctx.t('firstAvailableDateForProduct', {
     product: product.name,
-    date: apiProductAvailabilities.firstAvailableDate.toLocaleDateString(
-      locales[user.language],
-      { weekday: 'long', year: 'numeric', day: 'numeric', month: 'long' }
-    ),
+    date:
+      apiProductAvailabilities.firstAvailableDate.getTime() === 0
+        ? ctx.t('unknownDate')
+        : apiProductAvailabilities.firstAvailableDate.toLocaleDateString(
+            locales[user.language],
+            { weekday: 'long', year: 'numeric', day: 'numeric', month: 'long' }
+          ),
   })
 
   const availableTimeslots = apiProductAvailabilities.availabilities

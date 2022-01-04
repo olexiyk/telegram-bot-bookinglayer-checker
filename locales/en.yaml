@@ -15,6 +15,7 @@ unsubscribedFromNotificationForTheProduct: |
   You unsubscribed from recieving notifications about the following product: ${product}
 firstAvailableDateForProduct: |
   The first available appointment for ${product} is on ${date}
+unknownDate: unknown date
 availableTimeslotsWithinNextTwoWeeks: |
   The following timeslots are available within the next two weeks:
 availableTimeAndAvailabilityLeft: |

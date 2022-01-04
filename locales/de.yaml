@@ -25,6 +25,7 @@ unsubscribedFromNotificationForTheProduct: |
   Du bist von der Benachrichtigungen für folgendes Produkt abgemeldet: ${product}
 firstAvailableDateForProduct: |
   Der erste verfügbare Termin für ${product} ist am ${date}
+unknownDate: unbekannte Datum
 availableTimeslotsWithinNextTwoWeeks: |
   Die folgenden Zeitfenster sind innerhalb der nächsten zwei Wochen verfügbar:
 availableTimeAndAvailabilityLeft: |
