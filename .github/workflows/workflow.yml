@@ -1,6 +1,9 @@
-name: Compile and lint code
+name: Compile, lint and test code
 
 on:
+  push:
+    branches:
+      - main
   pull_request:
     types: [synchronize, opened]
 
@@ -15,3 +18,5 @@ jobs:
         run: yarn tsc --skipLibCheck
       - name: Lint code
         run: yarn lint
+      - name: Test code
+        run: yarn test

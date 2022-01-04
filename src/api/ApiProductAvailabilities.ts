@@ -1,9 +1,24 @@
+export interface JsonProductAvailability {
+  data: {
+    first_available: string
+    dates: { [date: string]: JsonProductAvailabilitySlot }
+  }
+}
+
+interface JsonProductAvailabilitySlot {
+  availability: number
+  capacity: number
+  available_for_checkin: boolean
+  timeslots?: { [dateTime: string]: JsonProductAvailabilitySlot }
+}
+
 export class Timeslot {
   public dateTime: Date
   public availability: number
   public capacity: number
   public availableForCheckin: boolean
-  constructor(dateTime: string, timeslotData: any) {
+
+  constructor(dateTime: string, timeslotData: JsonProductAvailabilitySlot) {
     this.dateTime = new Date(dateTime)
     this.availability = timeslotData.availability
     this.capacity = timeslotData.capacity
@@ -17,15 +32,15 @@ export class Availability {
   public capacity: number
   public availableForCheckin: boolean
   public timeslots: Timeslot[]
-  constructor(date: string, availabilityData: any) {
+
+  constructor(date: string, availabilityData: JsonProductAvailabilitySlot) {
     this.date = new Date(date)
     this.availability = availabilityData.availability
     this.capacity = availabilityData.capacity
     this.availableForCheckin = availabilityData.available_for_checkin
 
     const timeslots: Timeslot[] = []
-    // eslint-disable-next-line @typescript-eslint/no-unsafe-argument
-    for (const timeslot of Object.entries(availabilityData.timeslots)) {
+    for (const timeslot of Object.entries(availabilityData.timeslots || [])) {
       const [time, timeslotData] = timeslot
       timeslots.push(new Timeslot(date + ' ' + time, timeslotData))
     }
@@ -38,12 +53,11 @@ export class ApiProductAvailabilities {
   public firstAvailableDate: Date
   public availabilities: Availability[]
 
-  constructor(jsonData: any) {
-    const data = jsonData.data || {}
+  constructor(jsonData: JsonProductAvailability) {
+    const data = jsonData.data
     this.firstAvailableDate = new Date(data.first_available)
 
     const availabilities: Availability[] = []
-    // eslint-disable-next-line @typescript-eslint/no-unsafe-argument
     for (const dates of Object.entries(data.dates)) {
       const [date, availabilityData] = dates
 

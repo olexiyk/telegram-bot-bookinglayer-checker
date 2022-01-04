@@ -55,7 +55,6 @@ export default async function notifyAllSubscribedUsers() {
     }
 
     const apiProductAvailabilities = await getProductAvailabilities(
-      // eslint-disable-next-line @typescript-eslint/no-unsafe-argument
       product.id,
       new Date(),
       FETCH_PRODUCT_AVAILABILITY_NUMBER_OF_DAYS

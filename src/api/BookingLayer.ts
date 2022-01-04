@@ -1,6 +1,9 @@
 // eslint-disable-next-line no-relative-import-paths/no-relative-import-paths
 import * as mockData from './mock.json'
-import { ApiProductAvailabilities } from '@/api/ApiProductAvailabilities'
+import {
+  ApiProductAvailabilities,
+  JsonProductAvailability,
+} from '@/api/ApiProductAvailabilities'
 import { addDays, format } from 'date-fns'
 import { fetch } from 'grammy/out/shim.node'
 import ApiProduct from '@/api/ApiProduct'
@@ -27,7 +30,7 @@ export async function getProductAvailabilities(
   )}&end=${formatDate(endDate)}&business_domain=${env.BUSINESS_DOMAIN}`
   console.log(queryUrl)
   const response = await fetch(queryUrl)
-  const data = await response.json()
+  const data = (await response.json()) as JsonProductAvailability
 
   return new ApiProductAvailabilities(data)
 }
