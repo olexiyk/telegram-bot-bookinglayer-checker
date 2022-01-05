@@ -10,6 +10,10 @@ on:
 jobs:
   compile-code:
     env:
+      TOKEN: 123
+      MONGO: mongodb://localhost:27017/test
+      BUSINESS_DOMAIN: some-business.bookinglayer.com
+      PORT: 3000
       TIMEZONE: Europe/Berlin
     runs-on: ubuntu-latest
     steps:
