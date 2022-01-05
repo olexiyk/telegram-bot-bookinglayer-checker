@@ -1,3 +1,6 @@
+import { zonedTimeToUtc } from 'date-fns-tz'
+import env from '@/helpers/env'
+
 export interface JsonProductAvailability {
   data: {
     first_available: string
@@ -19,7 +22,7 @@ export class Timeslot {
   public availableForCheckin: boolean
 
   constructor(dateTime: string, timeslotData: JsonProductAvailabilitySlot) {
-    this.dateTime = new Date(dateTime)
+    this.dateTime = zonedTimeToUtc(dateTime, env.TIMEZONE)
     this.availability = timeslotData.availability
     this.capacity = timeslotData.capacity
     this.availableForCheckin = timeslotData.available_for_checkin
@@ -34,7 +37,7 @@ export class Availability {
   public timeslots: Timeslot[]
 
   constructor(date: string, availabilityData: JsonProductAvailabilitySlot) {
-    this.date = new Date(date)
+    this.date = zonedTimeToUtc(date, env.TIMEZONE)
     this.availability = availabilityData.availability
     this.capacity = availabilityData.capacity
     this.availableForCheckin = availabilityData.available_for_checkin
@@ -55,7 +58,7 @@ export class ApiProductAvailabilities {
 
   constructor(jsonData: JsonProductAvailability) {
     const data = jsonData.data
-    this.firstAvailableDate = new Date(data.first_available)
+    this.firstAvailableDate = zonedTimeToUtc(data.first_available, env.TIMEZONE)
 
     const availabilities: Availability[] = []
     for (const dates of Object.entries(data.dates)) {

@@ -21,7 +21,7 @@ availableTimeslotsWithinNextTwoWeeks: |
 availableTimeAndAvailabilityLeft: |
   ${time} ⏰ ${availability} slots left
 noAvailableTimeslotsWithinNextTwoWeeks: |
-  There are not available timeslots within next two weeks.
+  There are no available timeslots within next two weeks.
   Booking is only possible within two weeks
 goToBookingPage: Go to booking page
 changeNotificationInterval: Change notification interval

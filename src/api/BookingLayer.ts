@@ -1,5 +1,4 @@
-// eslint-disable-next-line no-relative-import-paths/no-relative-import-paths
-import * as mockData from './mock.json'
+import * as mockData from '@/api/mock.json'
 import {
   ApiProductAvailabilities,
   JsonProductAvailability,

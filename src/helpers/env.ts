@@ -11,4 +11,5 @@ export default cleanEnv(process.env, {
   MONGO: str(),
   BUSINESS_DOMAIN: str(),
   PORT: num(),
+  TIMEZONE: str(),
 })

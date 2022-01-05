@@ -1,5 +1,4 @@
-// eslint-disable-next-line no-relative-import-paths/no-relative-import-paths
-import { ApiProductAvailabilities } from './ApiProductAvailabilities'
+import { ApiProductAvailabilities } from '@/api/ApiProductAvailabilities'
 
 describe('MyClass', () => {
   it('should have a name property when instantiated', () => {
@@ -41,7 +40,7 @@ describe('MyClass', () => {
     }
     const apiProductAvailabilities = new ApiProductAvailabilities(data)
     expect(apiProductAvailabilities.getFingerprint()).toBe(
-      '1637798400000-1637773200000-0-10-false-1637848800000-0-12-false-1637863200000-1-10-true'
+      '1637794800000-1637773200000-0-10-false-1637848800000-0-12-false-1637863200000-1-10-true'
     )
   })
 })
