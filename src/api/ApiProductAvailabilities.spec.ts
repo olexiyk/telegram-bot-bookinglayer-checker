@@ -1,6 +1,6 @@
 import { ApiProductAvailabilities } from '@/api/ApiProductAvailabilities'
 
-describe('MyClass', () => {
+describe('ApiProductAvailabilities', () => {
   it('should have a name property when instantiated', () => {
     const data = {
       data: {
