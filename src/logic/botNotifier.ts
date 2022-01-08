@@ -91,6 +91,7 @@ function notifyAboutTimeslots(
               month: 'numeric',
               hour: '2-digit',
               minute: '2-digit',
+              timeZone: env.TIMEZONE,
             }
           )
           return ctx.t('availableTimeAndAvailabilityLeft', {
@@ -165,7 +166,13 @@ async function notifyUser(
         ? ctx.t('unknownDate')
         : apiProductAvailabilities.firstAvailableDate.toLocaleDateString(
             locales[user.language],
-            { weekday: 'long', year: 'numeric', day: 'numeric', month: 'long' }
+            {
+              weekday: 'long',
+              year: 'numeric',
+              day: 'numeric',
+              month: 'long',
+              timeZone: env.TIMEZONE,
+            }
           ),
   })
 
