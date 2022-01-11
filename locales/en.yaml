@@ -1,8 +1,14 @@
 languageName: English
-help:
-  Hello, friend! This bot will notify about new available appointments for ${business} ${interval}
+help: |
+  Hello, friend! 👋 
   
-  In order to start receiving notifications, select available products
+  🤖 This bot will notify about new available appointments for ${business}
+  
+  Notifications will be sent ${lowercase(interval)}, but the interval can be changed in settings
+  
+  📅 The appointement times are shown in ${timezone} (${timezoneCode}).
+  
+  In order to start receiving notifications, select available products 👇
 selectAvailableProducts: Select available products
 languageSelector: Change language settings
 languageWasSelected: <b>This bot</b> now speaks English.
@@ -23,7 +29,7 @@ availableTimeAndAvailabilityLeft: |
 noAvailableTimeslotsWithinNextTwoWeeks: |
   There are no available timeslots within next two weeks.
   Booking is only possible within two weeks
-goToBookingPage: Go to booking page
+goToBookingPage: Go to booking page ↗️
 changeNotificationInterval: Change notification interval
 notificationIntervalWasUpdated: Notification interval was updated to <b>${interval}</b>
 notificationIntervalSelector: |

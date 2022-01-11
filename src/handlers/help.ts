@@ -3,6 +3,7 @@ import {
   BUTTON_SET_NOTIFICATION_INTERVAL,
   BUTTON_SHOW_PRODUCTS,
 } from '@/helpers/consts'
+import { localisedServerTimezone } from '@/helpers/i18n'
 import Context from '@/models/Context'
 import env from '@/helpers/env'
 import notificationIntervalToLocalText from '@/helpers/notificationIntervalToLocalText'
@@ -15,6 +16,8 @@ export default function handleHelp(ctx: Context) {
         ctx.dbuser.notificationInterval,
         ctx.i18n
       ),
+      timezoneCode: env.TIMEZONE,
+      timezone: localisedServerTimezone(ctx.dbuser.language),
     }),
     {
       parse_mode: 'HTML',

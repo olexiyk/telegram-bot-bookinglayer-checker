@@ -2,19 +2,25 @@
 
 # User facing features
 
-- [x] Users cat set language
+- [x] Users can set their language
 - [x] Users can view a list of available products
 - [x] Users can subscribe to notifications for individual products
 - [x] Users receive one notification with bookable timeslots per subscribed product
 - [x] Users can set notification interval
 - [x] Users do not receive notification with duplicated information. If product availability is the same as before, no notification is sent
-- [ ] Users are informed about the timezone business operates in
+- [x] Users are informed about the timezone business operates in
 - [ ] Bot does not send notifications between 22:00 and 7:00 - Ruhezeit 💤
 - [ ] Users can see the menu with all the available commands
-- [ ] Users see pleasant number of emojis in the notification messages
+- [x] Users see pleasant number of emojis in the messages
+- [ ] Users see decent pluralization in the messages
+- [x] Bot has an icon and a description
 
-# Technical features todo
+# Technical features
 
+- [x] Continuous deployment to Heroku
+- [x] Jest tests
+- [x] Continuous integration with GitHub Actions
+- [ ] All TS issues are fixed
 - [ ] Add post deployment smoke test for `/notify` endpoint   
 
 # Installation and local launch

@@ -1,10 +1,16 @@
 languageName: Deutsch
 help: |
-  Hallo, Freund! Dieser Bot wird dich über neue verfügbare Termine für ${business} ${interval} benachrichtigen.
+  Hallo, Freund 👋 
   
-  Um Benachrichtigungen zu erhalten, wähle die verfügbaren Produkte aus
+  🤖 Dieser Bot wird dich über neue verfügbare Termine für ${business} benachrichtigen
+  
+  Benachrichtigungen werden ${interval} gesendet, aber der Intervall kann in den Einstellungen geändert werden
+  
+  📅 Die verfügbaren Zeiten sind in ${timezone} (${timezoneCode}) angezeigt 
+  
+  Um Benachrichtigungen zu erhalten, wähle die verfügbaren Produkte aus 👇
 selectAvailableProducts: Wähle die verfügbaren Produkte
-languageSelector: Spracheinstellungen ändern
+languageSelector: Spracheinstellungen ändern (change language)
 languageWasSelected: <b>Dieser Bot</b> spricht jetzt Deutsch.
 changeNotificationInterval: Benachrichtigungsintervall ändern
 notificationIntervalWasUpdated: Benachrichtigungsintervall wurde auf <b>${interval}</b> geändert
@@ -33,4 +39,4 @@ availableTimeAndAvailabilityLeft: |
 noAvailableTimeslotsWithinNextTwoWeeks: |
   Es sind keine verfügbaren Zeiten in den nächsten zwei Wochen.
   Buchung ist nur innerhalb der nächsten zwei Wochen möglich
-goToBookingPage: Zum Buchungsseite gehen
+goToBookingPage: Zum Buchungsseite gehen ↗️

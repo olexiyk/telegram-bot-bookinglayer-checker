@@ -1,8 +1,14 @@
 languageName: 한국어
-help:
-  안녕하세요, 친구들! 이 봇은 ${business} ${interval}에 새로운 예약을 알려드립니다.
+help: |
+  안녕하세요, 친구들 👋 
   
-  새로운 예약을 알려드릴 수 있는 상품을 선택해주세요.
+  🤖 새로운 예약이 있는 ${business}의 상품을 알려드립니다.
+  
+  알림은 ${interval}로 발송되나, 알림 주기는 설정에서 변경할 수 있습니다.
+  
+  📅 사용 가능한 시간대는 ${timezone} (${timezoneCode})에 표시됩니다.
+  
+  새로운 예약을 알려드릴 수 있는 상품을 선택해주세요 👇
 selectAvailableProducts: 사용 가능한 상품을 선택하세요
 languageSelector: 언어 설정 변경 (change language)
 languageWasSelected: 이 봇은 한국어로 메시지를 보냅니다
@@ -18,7 +24,7 @@ availableTimeAndAvailabilityLeft: |
 noAvailableTimeslotsWithinNextTwoWeeks: |
   다음 두 주 내에 사용 가능한 시간대가 없습니다
   예약은 다음 두 주 내에만 가능합니다
-goToBookingPage: 예약 페이지로 이동
+goToBookingPage: 예약 페이지로 이동 ↗️
 changeNotificationInterval: 알림 간격 변경
 notificationIntervalWasUpdated: 알림 간격이 <b>${interval}</b>로 업데이트 되었습니다
 notificationInvervalSelector: |
