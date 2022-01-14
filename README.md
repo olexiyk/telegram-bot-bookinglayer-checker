@@ -10,7 +10,7 @@
 - [x] Users do not receive notification with duplicated information. If product availability is the same as before, no notification is sent
 - [x] Users are informed about the timezone business operates in
 - [ ] Bot does not send notifications between 22:00 and 7:00 - Ruhezeit 💤
-- [ ] Users can see the menu with all the available commands
+- [x] Users can see the menu with all the available commands
 - [x] Users see pleasant number of emojis in the messages
 - [ ] Users see decent pluralization in the messages
 - [x] Bot has an icon and a description

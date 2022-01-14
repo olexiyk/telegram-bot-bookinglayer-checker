@@ -7,6 +7,13 @@ import {
   BUTTON_SET_NOTIFICATION_INTERVAL,
   BUTTON_SHOW_PRODUCTS,
 } from '@/helpers/consts'
+import {
+  COMMAND_HELP,
+  COMMAND_LANGUAGE,
+  COMMAND_NOTIFICATIONS,
+  COMMAND_PRODUCTS,
+  initCommandsMenu,
+} from '@/helpers/initCommandsMenu'
 import { ignoreOld, sequentialize } from 'grammy-middlewares'
 import { run } from '@grammyjs/runner'
 import attachUser from '@/middlewares/attachUser'
@@ -40,9 +47,10 @@ async function runApp() {
     .use(languageMenu)
     .use(notificationIntervalMenu)
   // Commands
-  bot.command(['help', 'start'], sendHelp)
-  bot.command('language', handleLanguage)
-  bot.command('showProducts', showProducts)
+  bot.command([COMMAND_HELP, 'start'], sendHelp)
+  bot.command(COMMAND_LANGUAGE, handleLanguage)
+  bot.command(COMMAND_PRODUCTS, showProducts)
+  bot.command(COMMAND_NOTIFICATIONS, handleShowNotificationIntervalMenu)
   bot.callbackQuery(BUTTON_SHOW_PRODUCTS, showProducts)
   bot.callbackQuery(BUTTON_SET_LANGUAGE, handleLanguage)
   bot.callbackQuery(
@@ -54,6 +62,7 @@ async function runApp() {
   bot.catch(console.error)
   // Start bot
   await bot.init()
+  await initCommandsMenu(bot)
   run(bot)
   console.info(`Bot ${bot.botInfo.username} is up and running`)
 }
