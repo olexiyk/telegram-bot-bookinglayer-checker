@@ -3,7 +3,7 @@ import env from '@/helpers/env'
 
 export interface JsonProductAvailability {
   data: {
-    first_available: string
+    first_available: string | null
     dates: { [date: string]: JsonProductAvailabilitySlot }
   }
 }
@@ -58,11 +58,17 @@ export class ApiProductAvailabilities {
 
   constructor(jsonData: JsonProductAvailability) {
     const data = jsonData.data
-    this.firstAvailableDate = zonedTimeToUtc(data.first_available, env.TIMEZONE)
+
+    this.firstAvailableDate = zonedTimeToUtc('1970-01-01', env.TIMEZONE)
+    const firstAvailableDate = data.first_available
+      ? zonedTimeToUtc(data.first_available, env.TIMEZONE)
+      : null
 
     const availabilities: Availability[] = []
     for (const dates of Object.entries(data.dates)) {
       const [date, availabilityData] = dates
+      this.firstAvailableDate =
+        firstAvailableDate || zonedTimeToUtc(date, env.TIMEZONE)
 
       availabilities.push(new Availability(date, availabilityData))
     }
